@@ -1,0 +1,91 @@
+import styled from "styled-components";
+
+export const ContactSection = styled.section`
+
+    margin: 20rem 2rem 14rem;
+
+    @media ${(props) => props.theme.breakpoints.sm} {
+        margin: 14rem 0;
+    }
+
+    h2 {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        line-height: 1.2;
+        font-size: var(--fz-xxxl);
+        font-weight: bold;
+        width: max-content;
+        background: linear-gradient(121.57deg, var(--lightest-slate) 30%,rgba(255,255,255,0.66) 70.15%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        margin: 4rem auto;
+        color: var(--main-color);
+        font-size: var(--fz-lg);
+        text-align: center;
+    }
+
+    button {
+        margin-top: 3rem;
+        display: block;
+        border: 1px solid var(--active-color);
+        border-radius: var(--border-radius);
+        padding: 1rem 2rem;
+        max-width: 200px;
+        color: var(--active-color);
+        font-size: var(--fz-sm);
+        text-align: center;
+        line-height: 1.2;
+        background: transparent;
+        outline: none;
+        transition: var(--transition);
+        cursor: pointer;
+        &:hover {
+            box-shadow: 0px 0px 3px 0px var(--active-color);
+            background: rgba(66, 135, 245, .1)
+        }
+
+        @media ${(props) => props.theme.breakpoints.sm} {
+            margin: 3rem auto 0;
+        }
+    }
+`
+
+export const MessagerInfo = styled.div`
+    display: grid;
+    grid-template-areas: "name name email email" "textarea  textarea textarea textarea";
+    gap: 2rem;
+    input[name="name"] {
+        grid-area: name
+    }
+    input[name="email"] {
+        grid-area: email
+    }
+    textarea {
+        grid-area: textarea
+    }
+    input, textarea {
+        padding: 1.5rem 4rem 1.5rem 1.5rem;
+        outline: none;
+        background-color: transparent;
+        border: 1px solid var(--active-color);
+        border-radius: var(--border-radius);
+        color: var(--nav-color);
+        font-size: var(--fz-md);
+    }
+
+    textarea {
+        min-height: 10rem;
+    }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        grid-template-areas: "name" "email" "textarea"; 
+        input, textarea {
+            padding: 1rem 3rem 1rem 1.5rem;
+            font-size: var(--fz-sm);
+        }
+    }
+`
