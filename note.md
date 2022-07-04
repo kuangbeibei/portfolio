@@ -63,7 +63,7 @@
 
 6. Z index在postion是relative的元素上也是有作用的。it only works on positioned elements ( position:absolute , position:relative , or position:fixed)
 
-7. css3的一些没用过的属性 width: min(75vw, 400px); font-size:clamp(var(--fz-sm),5vw,var(--fz-md))
+7. css3的一些没用过的属性 width: min(75vw, 400px); font-size:clamp(var(--fz-sm),5vw,var(--fz-md)), width: max-content
 
 8. 在nextjs中给body添加className。结合react的context api 和nextjs的特有方法
    
@@ -147,4 +147,25 @@
         )
     }
 
+```
+
+9. 在work-experience这个模块，小屏的时候需要把年份横向铺开并且可以scroll，高亮的bar也需要显示。但是如果我在最外层包一个wrapper，给它overflow-x:auto，那么无论我设置bar的z-index是多少，都会被遮挡。结构如下：
+```
+    wrapper -- postion:relative; overflow: auto
+        ul -- display:flex; flex-direction:row 在ul上给border-bottom也是不行的。要放在内部的元素上，每个设置border-bottom
+            li
+        bar -- position: absolute。z-index多少的都没用
+    wrapper 
+```
+
+以上改为下面
+
+```
+    wrapper -- position: relative; z-index: 3; overflow: auto; width: 100%这个属性也是很重要的。和最外面这个section的宽度一样。等于是比max-content要小的，这样才有scroll的效果。如果是max-content，那么会被body的overflow:hidden给限制住不能scroll
+        tabButton -- border-bottom 在每一个元素上设置border-bottom
+        tabButton -- border-bottom 如上
+        tabButton -- border-bottom 如上
+
+        bar -- width: tabButton的宽，height:2px; transform: translateX: index * tabButton宽
+    wrapper
 ```

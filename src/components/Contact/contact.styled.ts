@@ -16,7 +16,7 @@ export const ContactSection = styled.section`
         font-size: var(--fz-xxxl);
         font-weight: bold;
         width: max-content;
-        background: linear-gradient(121.57deg, var(--lightest-slate) 30%,rgba(255,255,255,0.66) 70.15%);
+        background: linear-gradient(121.57deg, var(--nav-color) 30%,rgba(255,255,255,0.66) 70.15%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -75,6 +75,9 @@ export const MessagerInfo = styled.div`
         border-radius: var(--border-radius);
         color: var(--nav-color);
         font-size: var(--fz-md);
+        ::placeholder {
+            color: var(--main-color);
+        }
     }
 
     textarea {

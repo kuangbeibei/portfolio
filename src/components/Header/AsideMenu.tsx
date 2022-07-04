@@ -7,8 +7,6 @@ import { MenuContextInterface, useMenuContext } from 'context'
 
 
 const AsideMenu: FC<{}> = () => {
-    console.log('aside menu');
-
     const { open, handleMenuSwitch } = useMenuContext() as MenuContextInterface;
 
     return (

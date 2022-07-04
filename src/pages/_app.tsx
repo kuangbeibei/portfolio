@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components"
 import theme from "Theme/default"
 import GlobalStyle from "Styles/globals"
 import Layout from "layout"
-import { Header } from "Components"
 import { MenuContext } from "context"
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -30,7 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
 				handleMenuSwitch
 			}}>
 				<GlobalStyle />
-				<Header />
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>

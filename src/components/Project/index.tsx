@@ -1,108 +1,41 @@
-import { FC } from 'react'
+import { FC, useState, useEffect } from 'react'
+import { client } from 'Client'
 import { ProjectSection, ProjectContainer, ProjectItem, StyledVscFolder, StyledMdOpenInNew, StyledVscGithubAlt } from "./project.styled"
 
 
 const Projects: FC<{}> = () => {
+  const [projects, setProjects] = useState<Array<any>>([])
+  useEffect(() => {
+    const query = '*[_type=="projects"]';
+    client.fetch(query).then(data => {
+      setProjects(data)
+    })
+  }, [])
+  
   return (
     <ProjectSection>
       <h2>{`Things I've built`}</h2>
       <ProjectContainer>
-        <ProjectItem>
-          <header>
-            <StyledVscFolder />
-            <div>
-              <StyledVscGithubAlt />
-              <StyledMdOpenInNew />
-            </div>
-          </header>
-          <h3>i am title</h3>
-          <p>Building a custom multisite compatible WordPress plugin to build global search with Algolia</p>
-          <ul>
-            <li>react</li>
-            <li>typescript</li>
-            <li>nextjs</li>
-          </ul>
-        </ProjectItem>
-        <ProjectItem>
-          <header>
-            <StyledVscFolder />
-            <div>
-              <StyledVscGithubAlt />
-              <StyledMdOpenInNew />
-            </div>
-          </header>
-          <h3>i am title</h3>
-          <p>Building a custom multisite compatible WordPress plugin to build global search with Algolia</p>
-          <ul>
-            <li>react</li>
-            <li>typescript</li>
-            <li>nextjs</li>
-          </ul>
-        </ProjectItem>
-        <ProjectItem>
-          <header>
-            <StyledVscFolder />
-            <div>
-              <StyledVscGithubAlt />
-              <StyledMdOpenInNew />
-            </div>
-          </header>
-          <h3>i am title</h3>
-          <p>Building a custom multisite compatible WordPress plugin to build global search with Algolia</p>
-          <ul>
-            <li>react</li>
-            <li>typescript</li>
-            <li>nextjs</li>
-          </ul>
-        </ProjectItem>
-        <ProjectItem>
-          <header>
-            <StyledVscFolder />
-            <div>
-              <StyledVscGithubAlt />
-              <StyledMdOpenInNew />
-            </div>
-          </header>
-          <h3>i am title</h3>
-          <p>Building a custom multisite compatible WordPress plugin to build global search with Algolia</p>
-          <ul>
-            <li>react</li>
-            <li>typescript</li>
-            <li>nextjs</li>
-          </ul>
-        </ProjectItem>
-        <ProjectItem>
-          <header>
-            <StyledVscFolder />
-            <div>
-              <StyledVscGithubAlt />
-              <StyledMdOpenInNew />
-            </div>
-          </header>
-          <h3>i am title</h3>
-          <p>Building a custom multisite compatible WordPress plugin to build global search with Algolia</p>
-          <ul>
-            <li>react</li>
-            <li>typescript</li>
-            <li>nextjs</li>
-          </ul>
-        </ProjectItem>
-        <ProjectItem>
-          <header>
-            <StyledVscFolder />
-            <div>
-              <StyledVscGithubAlt />
-              <StyledMdOpenInNew />
-            </div>
-          </header>
-          <h3>i am title</h3>
-          <p>Building a custom multisite compatible WordPress plugin to build global search with Algolia</p>
-          <ul>
-            <li>react</li>
-            <li>typescript</li>
-            <li>nextjs</li>
-          </ul>
-        </ProjectItem>
+        {
+          projects.map((project: any) => (
+            <ProjectItem>
+              <header>
+                <StyledVscFolder />
+                <div>
+                  <StyledVscGithubAlt />
+                  <StyledMdOpenInNew />
+                </div>
+              </header>
+              <h3>{project.name}</h3>
+              <p>{project.desc}</p>
+              <ul>
+                {
+                  project.technologies.map((tech: string) => <li key={tech}>{tech}</li>)
+                }
+              </ul> 
+            </ProjectItem>
+          ))
+        }
       </ProjectContainer>
     </ProjectSection>
   )

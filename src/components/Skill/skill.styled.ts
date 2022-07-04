@@ -9,6 +9,7 @@ export const SkillSection = styled.section`
     }
 
     h2 {
+        margin-bottom: 4rem;
         display: flex;
         align-items: center;
         white-space: nowrap;
@@ -16,7 +17,7 @@ export const SkillSection = styled.section`
         font-size: var(--fz-xxxl);
         font-weight: bold;
         width: max-content;
-        background: linear-gradient(121.57deg, var(--lightest-slate) 30%,rgba(255,255,255,0.66) 70.15%);
+        background: linear-gradient(121.57deg, var(--nav-color) 10%,rgba(255,255,255,0.66) 40.15%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         &:after {
@@ -27,26 +28,43 @@ export const SkillSection = styled.section`
             width: 40rem;
             height: 1px;
             background: var(--light-color);
-            @media ${(props) => props.theme.breakpoints.sm} {
-                width: 100%;
+            @media ${(props) => props.theme.breakpoints.md} {
+                width: 26rem;
+            }
+            @media ${(props) => props.theme.breakpoints.xs} {
+                width: 20rem;
+            }
+            @media ${(props) => props.theme.breakpoints.xxs} {
+                width: 10rem;
+            }
+            @media ${(props) => props.theme.breakpoints.xxxs} {
+                width: 10%;
             }
         }
     }
 `
 
 export const SelectedSkillsWrap = styled.div`
-    margin: 4rem 0 0;
     /* 用grid */
     display: grid;
     place-items: start;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
     gap: 4rem;
     color: var(--main-color);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
+    
     @media ${(props) => props.theme.breakpoints.lg} {
-        grid-template-columns: auto auto; 
+        grid-template-columns: 50% 50%; 
         gap: 4rem;
+    }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        font-size: var(--fz-sm);
+    }
+
+    @media ${(props) => props.theme.breakpoints.sm} {
+        font-size: var(--fz-xs);
     }
 `
 
@@ -61,4 +79,12 @@ export const StyledGiTriangleTarget = styled(GiTriangleTarget)`
     transform: rotateZ(90deg);
     color: var(--active-color);
     font-size: var(--fz-sm);
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        font-size: var(--fz-sm);
+    }
+
+    @media ${(props) => props.theme.breakpoints.sm} {
+        font-size: var(--fz-xs);
+    }
 `

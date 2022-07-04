@@ -7,14 +7,14 @@ const GlobalStyle = createGlobalStyle`
     :root {
         --background: #0a192f;
         --header: rgba(10, 25, 47, 0.85);
-        --header-scroll-height: 100px;
+        --header-scroll-height: 80px;
         --box-shadow: rgba(2,12,27,0.7);
 
         --light-navy: #112240;
         
-        --nav-color: #f6e6e0;
-        --active-color: #569fcc;
-        --main-color: #8892b0;
+        --nav-color: #ccd6f6;
+        --active-color: #9e98f5;
+        --main-color: rgba(204, 214, 246, .6);
         --light-color: #233554; 
 
         --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
@@ -53,8 +53,8 @@ const GlobalStyle = createGlobalStyle`
         --border-radius: 4px;
         --nav-height: 100px;
         --nav-scroll-height: 70px;
-        --tab-height: 42px;
-        --tab-width: 120px;
+        --tab-height: 56px;
+        --tab-width: 183px;
         --easing: cubic-bezier(0.645,0.045,0.355,1);
        
         --hamburger-width: 30px;
@@ -69,6 +69,12 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         scroll-behavior: smooth;
+    }
+
+    button {
+        outline: none;
+        border: 0 none;
+        background-color: transparent;
     }
 
     html {

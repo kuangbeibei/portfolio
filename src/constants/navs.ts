@@ -11,13 +11,13 @@ const navs: Array<NavLinkInterface> = [
         isActive: false,
     },
     {
-        title: 'Skill',
-        link: '#skill',
+        title: 'Project',
+        link: '#project',
         isActive: false,
     },
     {
-        title: 'Project',
-        link: '#project',
+        title: 'Skill',
+        link: '#skill',
         isActive: false,
     },
     {

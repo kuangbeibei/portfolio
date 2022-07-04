@@ -4,14 +4,14 @@ import { VscFolder, VscGithubAlt } from "react-icons/vsc"
 
 export const ProjectSection = styled.section`
 
-    margin: 20rem 2rem 0;
+    margin: 20rem auto 0;
 
     @media ${(props) => props.theme.breakpoints.sm} {
         margin: 14rem 0 0;
     }
 
     h2 {
-        margin: 0 auto;
+        margin: 0 auto 4rem;
         display: flex;
         align-items: center;
         white-space: nowrap;
@@ -19,7 +19,7 @@ export const ProjectSection = styled.section`
         font-size: var(--fz-xxxl);
         font-weight: bold;
         width: max-content;
-        background: linear-gradient(121.57deg, var(--lightest-slate) 30%,rgba(255,255,255,0.66) 70.15%);
+        background: linear-gradient(121.57deg, var(--nav-color) 30%,rgba(255,255,255,0.66) 70.15%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         &:before {
@@ -30,7 +30,16 @@ export const ProjectSection = styled.section`
             width: 20rem;
             height: 1px;
             background: var(--light-color);
-            @media ${(props) => props.theme.breakpoints.sm} {
+            @media ${(props) => props.theme.breakpoints.md} {
+                width: 15rem;
+            }
+            @media ${(props) => props.theme.breakpoints.xs} {
+                width: 10rem; 
+            }
+            @media ${(props) => props.theme.breakpoints.xxs} {
+                width: 5rem;
+            }
+            @media ${(props) => props.theme.breakpoints.xxxs} {
                 width: 10%;
             }
         }
@@ -42,7 +51,16 @@ export const ProjectSection = styled.section`
             width: 20rem;
             height: 1px;
             background: var(--light-color);
-            @media ${(props) => props.theme.breakpoints.sm} {
+            @media ${(props) => props.theme.breakpoints.md} {
+                width: 15rem;
+            }
+            @media ${(props) => props.theme.breakpoints.xs} {
+                width: 10rem; 
+            }
+            @media ${(props) => props.theme.breakpoints.xxs} {
+                width: 5rem;
+            }
+            @media ${(props) => props.theme.breakpoints.xxxs} {
                 width: 10%;
             }
         }
@@ -50,18 +68,17 @@ export const ProjectSection = styled.section`
 `
 
 export const ProjectContainer = styled.div`
-    margin: 4rem 0;
     display: grid;
     place-items: center;
     grid-template-columns: auto auto auto;
     gap: 2rem;
     @media ${(props) => props.theme.breakpoints.lg} {
         grid-template-columns: auto auto;
-        gap: 4rem;
+        gap: 2rem;
     }
-    @media ${(props) => props.theme.breakpoints.sm} {
+    @media ${(props) => props.theme.breakpoints.xs} {
         grid-template-columns: auto;
-        gap: 4rem;
+        gap: 2rem;
     }
 `
 
@@ -76,9 +93,8 @@ export const ProjectItem = styled.div`
     transition: var(--transition);
     &:hover {
         transform: translateY(-6px);
-        border-bottom: 1px solid var(--active-color);
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        box-shadow: inset 0 0 8px 1px var(--main-color);
+        border-radius: 0;
         h3 {
             background: linear-gradient(121.57deg, var(--active-color) 30%,rgba(255,255,255,0.66) 70.15%);
             -webkit-background-clip: text;
@@ -97,7 +113,7 @@ export const ProjectItem = styled.div`
     h3 {
         margin-bottom: 1rem;
         line-height: 2;
-        color: var(--lightest-slate);
+        color: var(--nav-color);
         font-size: var(--fz-xl);
     }
 
@@ -114,10 +130,11 @@ export const ProjectItem = styled.div`
         align-content: center;
         align-items: center;
         list-style: none;
+        flex-wrap: wrap;
         li {
             margin-right: 1rem;
             font-family: var(--font-mono);
-            line-height: 1.4;
+            line-height: 1.5;
             color: var(--main-color);
             font-size: var(--fz-sm);
         }

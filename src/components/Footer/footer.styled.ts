@@ -44,11 +44,6 @@ export const Socials = styled.ul`
             margin-right: 2.1rem;
         } 
     }
-    @media ${(props) => props.theme.breakpoints.xs} {
-        li:nth-last-child(-n+2) {
-            margin-top: 2rem;
-        }
-    } 
 `;
 
 export const Copyright = styled.div`

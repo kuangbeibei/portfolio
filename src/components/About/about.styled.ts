@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
 export const AboutSection = styled.section`
-   margin: 10rem 3rem 0;
+   margin: 14rem 3rem 0;
+
    @media ${(props) => props.theme.breakpoints.sm} {
       margin: 2rem 0 0;
    }
 
+   @media ${(props) => props.theme.breakpoints.md} {
+      margin: 10rem auto 0;
+   }
+
    h2 {
+      margin-bottom: 4rem;
       display: flex;
       align-items: center;
       white-space: nowrap;
@@ -14,7 +20,7 @@ export const AboutSection = styled.section`
       font-size: var(--fz-xxxl);
       font-weight: bold;
       width: max-content;
-      background: linear-gradient(121.57deg, var(--lightest-slate) 30%,rgba(255,255,255,0.66) 70.15%);
+      background: linear-gradient(121.57deg, var(--nav-color) 30%,rgba(255,255,255,0.66) 70.15%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       &:after {
@@ -26,7 +32,16 @@ export const AboutSection = styled.section`
          height: 1px;
          background: var(--light-color);
          @media ${(props) => props.theme.breakpoints.sm} {
-            width: 100%;
+            width: 34rem;
+         }
+         @media ${(props) => props.theme.breakpoints.xs} {
+            width: 32rem;
+         }
+         @media ${(props) => props.theme.breakpoints.xxs} {
+            width: 22rem;
+         }
+         @media ${(props) => props.theme.breakpoints.xxxs} {
+            width: 10%;
          }
       }
    }
@@ -34,7 +49,7 @@ export const AboutSection = styled.section`
 
 export const IntroWrapper = styled.div`
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
    align-content: center;
    align-items: center;
    
@@ -46,7 +61,6 @@ export const IntroWrapper = styled.div`
 
 export const StyledAboutIntro = styled.div`
    max-width: 580px;
-   margin-top: 3.6rem;
    p {
       margin: 0 0 2rem;
       line-height: 1.4;
