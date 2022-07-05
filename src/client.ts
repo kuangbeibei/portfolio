@@ -3,11 +3,11 @@ import imageUrlBuilder from '@sanity/image-url';
 import { SanityImageSource } from "@sanity/image-url/lib/types/types"
 
 export const client = sanityClient({
-    projectId: 'szuzg21v',
-    dataset: 'production',
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     apiVersion: '2022-06-27',
-    useCdn: true,
-    token: process.env.REACT_APP_SANITY_TOKEN,
+    useCdn: process.env.NODE_ENV === 'production',
+    token: process.env.SANITY_API_TOKEN,
 });
 
 const builder = imageUrlBuilder(client);

@@ -52,25 +52,36 @@ export const ContactSection = styled.section`
             margin: 3rem auto 0;
         }
     }
+
+    .message_submitted {
+        line-height: 1.5;
+        text-align: center;
+        color: var(--active-color);
+        font-size: var(--fz-lg);
+        font-family: var(--font-mono);
+    }
 `
 
 export const MessagerInfo = styled.div`
     display: grid;
     grid-template-areas: "name name email email" "textarea  textarea textarea textarea";
     gap: 2rem;
-    input[name="name"] {
-        grid-area: name
+    .name {
+        grid-area: name;
     }
-    input[name="email"] {
-        grid-area: email
+    .email {
+        grid-area: email;
     }
-    textarea {
-        grid-area: textarea
+    .textarea {
+        grid-area: textarea;
     }
+
     input, textarea {
         padding: 1.5rem 4rem 1.5rem 1.5rem;
+        width: 100%;
         outline: none;
-        background-color: transparent;
+        
+        background-color: var(--background);
         border: 1px solid var(--active-color);
         border-radius: var(--border-radius);
         color: var(--nav-color);
@@ -78,10 +89,26 @@ export const MessagerInfo = styled.div`
         ::placeholder {
             color: var(--main-color);
         }
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active  {
+            -webkit-box-shadow: 0 0 0px 1000px var(--background) inset;
+            -webkit-text-fill-color: var(--nav-color) !important;
+        }
     }
+
 
     textarea {
         min-height: 10rem;
+    }
+
+    .field_errormsg {
+        margin-top: 6px;
+        margin-left: 2px;
+        color: var(--pink);
+        font-size: var(--fz-xs);
+        font-weight: 300;
     }
 
     @media ${(props) => props.theme.breakpoints.md} {
@@ -90,5 +117,5 @@ export const MessagerInfo = styled.div`
             padding: 1rem 3rem 1rem 1.5rem;
             font-size: var(--fz-sm);
         }
-    }
+    } 
 `

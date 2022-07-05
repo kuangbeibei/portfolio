@@ -169,3 +169,19 @@
         bar -- width: tabButton的宽，height:2px; transform: translateX: index * tabButton宽
     wrapper
 ```
+
+10. 在接入sanity之后，想到的改进策略是在index page页面getServerSideProps获取包含所有内容信息的，不需要一个个去调接口
+
+11. input框的autofill样式和手动输入不一致，解决办法：
+```
+        ::placeholder {
+            color: var(--main-color);
+        }
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active  {
+            -webkit-box-shadow: 0 0 0px 1000px var(--background) inset;
+            -webkit-text-fill-color: var(--nav-color) !important;
+        }
+```

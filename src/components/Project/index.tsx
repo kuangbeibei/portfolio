@@ -11,14 +11,14 @@ const Projects: FC<{}> = () => {
       setProjects(data)
     })
   }, [])
-  
+
   return (
     <ProjectSection>
       <h2>{`Things I've built`}</h2>
       <ProjectContainer>
         {
           projects.map((project: any) => (
-            <ProjectItem>
+            <ProjectItem key={project.name}>
               <header>
                 <StyledVscFolder />
                 <div>
@@ -30,9 +30,9 @@ const Projects: FC<{}> = () => {
               <p>{project.desc}</p>
               <ul>
                 {
-                  project.technologies.map((tech: string) => <li key={tech}>{tech}</li>)
+                  project.technologies.map((tech: string, index: number) => <li key={index}>{tech}</li>)
                 }
-              </ul> 
+              </ul>
             </ProjectItem>
           ))
         }

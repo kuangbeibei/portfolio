@@ -27,6 +27,7 @@ export const Socials = styled.ul`
     align-items: center;
     flex-wrap: wrap;
     li {
+        margin-bottom: 2rem;
         list-style: none;
         transition: var(--transition);
         a {
@@ -47,11 +48,13 @@ export const Socials = styled.ul`
 `;
 
 export const Copyright = styled.div`
-    line-height: 70px;
+    margin-top: .5rem;
+    line-height: 1.4;
     font-size: var(--fz-sm);
 `
 
 export const StyledHiOutlineMail = styled(HiOutlineMail)`
+    margin-top: .5rem;
     font-size: var(--fz-xl);
     color: var(--active-color);
     cursor: pointer

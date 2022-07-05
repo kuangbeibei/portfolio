@@ -7,8 +7,6 @@ import Layout from "layout"
 import { MenuContext } from "context"
 
 export default function App({ Component, pageProps }: AppProps) {
-	console.log('App~~~', pageProps);
-
 	const [open, setOpen] = useState<boolean>(false);
 	const handleMenuSwitch = () => {
         setOpen(!open);

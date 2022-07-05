@@ -8,10 +8,9 @@ const Skills: FC<{}> = () => {
     const query = '*[_type=="skills"]';
     client.fetch(query).then(data => {
       const [item] = data;
-      setSkills(item?.name.split(','));
+      setSkills(item.name);
     })
   }, [])
-
 
   return (
     <SkillSection>
