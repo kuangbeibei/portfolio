@@ -54,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
         --nav-height: 100px;
         --nav-scroll-height: 70px;
         --tab-height: 56px;
-        --tab-width: 183px;
+        --tab-width: 167px;
         --easing: cubic-bezier(0.645,0.045,0.355,1);
        
         --hamburger-width: 30px;

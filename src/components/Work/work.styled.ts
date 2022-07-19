@@ -72,18 +72,26 @@ export const WorkInfoContainer = styled.div`
 `
 
 export const YearOfWork = styled.div`
-    grid-column: 1 / 3;
-
+    grid-column: 3 / 5;
     position: relative;
 
     display: flex;
     flex-direction: column;
     justify-content: start;
 
+    @media ${(props) => props.theme.breakpoints.xl} {
+        grid-column: 2 / 5;
+    }
+
     @media ${(props) => props.theme.breakpoints.lg} {
+        grid-column: 1 / 5;
+    }
+
+    @media ${(props) => props.theme.breakpoints.sm} {
+        overflow-x: scroll;
         grid-column: 1 / -1;
         flex-direction: row;
-        justify-content: center;
+        align-items: center;
         margin-bottom: 2rem;
     }
 
@@ -104,7 +112,7 @@ export const YearButton = styled.button`
         background: rgba(66, 135, 245, .1);
         cursor: pointer;
     }
-    @media ${(props) => props.theme.breakpoints.lg} {
+    @media ${(props) => props.theme.breakpoints.sm} {
         border-left: none;
         font-size: var(--fz-sm);   
         border-bottom: 2px solid var(--light-color);
@@ -124,7 +132,7 @@ export const YearActiveBar = styled.div<YearActiveBarInterface>`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 12;
+    z-index: 9;
     width: 2px;
     height: var(--tab-height);
     border-radius: var(--border-radius);
@@ -132,19 +140,18 @@ export const YearActiveBar = styled.div<YearActiveBarInterface>`
     transition: var(--transition);
     transform: translateY(calc(var(--tab-height) * ${props => props.index}));
 
-    @media ${(props) => props.theme.breakpoints.lg} {
+    @media ${(props) => props.theme.breakpoints.sm} {
         top: auto;
         bottom: 0;
         left: 0;
         height: 2px;
-        max-width: var(--tab-width);
-        width: 100%;
+        width: var(--tab-width);
         transform: translateX(calc(var(--tab-width) * ${props => props.index}));
     }
 `
 
 export const JobDescription = styled.div`
-    grid-column: 3 / 10;
+    grid-column: 5 / 12;
 
     padding: 0 2rem;
     color: var(--main-color);
@@ -174,7 +181,7 @@ export const JobDescription = styled.div`
     }
 
     @media ${(props) => props.theme.breakpoints.lg} {
-        grid-column: 1 / 9;
+        grid-column: 5 /13;
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {

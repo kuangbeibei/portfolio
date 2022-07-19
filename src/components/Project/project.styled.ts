@@ -93,7 +93,6 @@ export const ProjectItem = styled.div`
     transition: var(--transition);
     &:hover {
         transform: translateY(-6px);
-        box-shadow: inset 0 0 8px 1px var(--main-color);
         border-radius: 0;
         h3 {
             background: linear-gradient(121.57deg, var(--active-color) 30%,rgba(255,255,255,0.66) 70.15%);
