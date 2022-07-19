@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 export const AboutSection = styled.section`
-   margin: 14rem 3rem 0;
-
-   @media ${(props) => props.theme.breakpoints.sm} {
-      margin: 2rem 0 0;
-   }
+   margin: 4rem 3rem 0;
+   padding-top: 10rem;
 
    @media ${(props) => props.theme.breakpoints.md} {
-      margin: 10rem auto 0;
+      padding-top: 6rem;
    }
 
    h2 {

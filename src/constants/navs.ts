@@ -11,8 +11,8 @@ const navs: Array<NavLinkInterface> = [
         isActive: false,
     },
     {
-        title: 'Project',
-        link: '#project',
+        title: 'Work',
+        link: '#work',
         isActive: false,
     },
     {
@@ -21,8 +21,8 @@ const navs: Array<NavLinkInterface> = [
         isActive: false,
     },
     {
-        title: 'Work',
-        link: '#work',
+        title: 'Project',
+        link: '#project',
         isActive: false,
     },
     {

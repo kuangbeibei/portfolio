@@ -32,7 +32,7 @@ const WorkExperience: FC<{}> = () => {
 	};
 
 	return (
-		<StyledWorkSection>
+		<StyledWorkSection id="work">
 			<h2>Work Experience</h2>
 
 			<WorkInfoContainer>

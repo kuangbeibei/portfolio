@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const ContactSection = styled.section`
 
-    margin: 20rem 2rem 14rem;
+    margin: 10rem 2rem 14rem;
 
-    @media ${(props) => props.theme.breakpoints.sm} {
-        margin: 14rem 0;
+    padding-top: 10rem;
+
+    @media ${(props) => props.theme.breakpoints.md} {
+      padding-top: 6rem;
     }
 
     h2 {

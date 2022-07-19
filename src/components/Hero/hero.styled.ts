@@ -1,18 +1,14 @@
 import styled from "styled-components";
-import { images } from "Constants";
 
 export const HeroSection = styled.section`
-    margin-top: 2rem;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
 
-    @media ${(props) => props.theme.breakpoints.sm} {
-        margin-top: 2rem;
-    }
-  
+    margin-top: 2rem;
+
     .bgAnimation__svg {
         position: absolute;
         top: 8rem;

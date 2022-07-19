@@ -1,33 +1,53 @@
-import { FC } from 'react'
-import Link from "next/link"
-import { RiMenuLine, RiCloseLine } from "react-icons/ri"
-import { AsideWrapper, AsideMenu as StyledAsideMenu, Links, StyledLink, MobileIcon } from "./header.styled"
-import { navs } from 'Constants'
-import { MenuContextInterface, useMenuContext } from 'context'
+import { FC } from "react";
+import Link from "next/link";
+import { RiMenuLine, RiCloseLine } from "react-icons/ri";
+import {
+	AsideWrapper,
+	AsideMenu as StyledAsideMenu,
+	Links,
+	StyledLink,
+	MobileIcon,
+} from "./header.styled";
+import { navs } from "Constants";
+import { MenuContextInterface, useMenuContext } from "context";
 
+const AsideMenu: FC<{
+	anchor: string;
+}> = ({ anchor }) => {
+	const { open, handleMenuSwitch } = useMenuContext() as MenuContextInterface;
 
-const AsideMenu: FC<{}> = () => {
-    const { open, handleMenuSwitch } = useMenuContext() as MenuContextInterface;
+	const handleSideMenuAnchor = () => {
+        handleMenuSwitch()
+	};
 
-    return (
-        <AsideWrapper>
-            <MobileIcon>
-                {!open && <RiMenuLine onClick={handleMenuSwitch} onTouchEnd={handleMenuSwitch} />}
-                {open && <RiCloseLine onClick={handleMenuSwitch} onTouchEnd={handleMenuSwitch} />}
-            </MobileIcon>
+	return (
+		<AsideWrapper>
+			<MobileIcon>
+				{!open && (
+					<RiMenuLine
+						onClick={handleMenuSwitch}
+						onTouchEnd={handleMenuSwitch}
+					/>
+				)}
+				{open && (
+					<RiCloseLine
+						onClick={handleMenuSwitch}
+						onTouchEnd={handleMenuSwitch}
+					/>
+				)}
+			</MobileIcon>
 
-            <StyledAsideMenu isOpen={open as any as boolean}>
-                <Links column>
-                    {
-                        navs.map(nav => <Link href={nav.link} key={nav.link}>
-                            <StyledLink>{nav.title}</StyledLink>
-                        </Link>)
-                    }
-                </Links>
-            </StyledAsideMenu>
-
-        </AsideWrapper>
-    )
-}
+			<StyledAsideMenu isOpen={open as any as boolean}>
+				<Links column>
+					{navs.map((nav) => (
+						<Link href={nav.link} key={nav.link}>
+							<StyledLink active={anchor === nav.link} onClick={handleSideMenuAnchor}>{nav.title}</StyledLink>
+						</Link>
+					))}
+				</Links>
+			</StyledAsideMenu>
+		</AsideWrapper>
+	);
+};
 
 export default AsideMenu;

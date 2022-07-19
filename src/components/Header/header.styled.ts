@@ -54,13 +54,17 @@ export const Links = styled.ul<LinksInterface>`
     flex-direction: ${props => props.column ? 'column' : 'row'};
 `;
 
-export const StyledLink = styled.a`
+interface StyledLinkInterface {
+    active: boolean
+}
+
+export const StyledLink = styled.a<StyledLinkInterface>`
     padding: 2rem;
     transition: var(--transition);
     font-size: var(--fz-md);
     font-family: var(--font-mono);
     font-weight: 500;
-    color: var(--nav-color);
+    color: ${props => props.active ? 'var(--active-color)' : 'var(--nav-color)'};
     &:hover {
         color: var(--active-color);
         cursor: pointer;

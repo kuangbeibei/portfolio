@@ -13,7 +13,7 @@ const Projects: FC<{}> = () => {
   }, [])
 
   return (
-    <ProjectSection>
+    <ProjectSection id="project">
       <h2>{`Things I've built`}</h2>
       <ProjectContainer>
         {

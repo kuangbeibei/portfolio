@@ -13,7 +13,7 @@ const Skills: FC<{}> = () => {
   }, [])
 
   return (
-    <SkillSection>
+    <SkillSection id="skill">
       <h2>Skills mostly used</h2>
       <SelectedSkillsWrap>
         {

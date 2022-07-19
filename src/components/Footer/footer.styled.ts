@@ -49,7 +49,7 @@ export const Socials = styled.ul`
 
 export const Copyright = styled.div`
     margin-top: .5rem;
-    line-height: 1.4;
+    line-height: 2;
     font-size: var(--fz-sm);
 `
 

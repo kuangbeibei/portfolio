@@ -114,7 +114,7 @@ const GlobalStyle = createGlobalStyle`
             padding: 0 50px;
         }
 
-        @media ${props => props.theme.breakpoints.md} {
+        @media ${props => props.theme.breakpoints.sm} {
             padding: 0 25px;
         }
     }

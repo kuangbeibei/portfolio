@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { GiTriangleTarget } from "react-icons/gi";
 
 export const SkillSection = styled.section`
-    margin: 20rem 3rem 0;
+    margin: 10rem 3rem 0;
 
-    @media ${(props) => props.theme.breakpoints.sm} {
-        margin: 16rem 0 0;
+    padding-top: 10rem;
+
+    @media ${(props) => props.theme.breakpoints.md} {
+      padding-top: 6rem;
     }
 
     h2 {
