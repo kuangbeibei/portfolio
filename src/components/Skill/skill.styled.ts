@@ -6,6 +6,7 @@ export const SkillSection = styled.section`
 
     padding-top: 10rem;
 
+
     @media ${(props) => props.theme.breakpoints.md} {
       padding-top: 6rem;
     }

@@ -4,7 +4,7 @@ export interface NavLinkInterface {
     isActive: boolean
 }
 
-const navs: Array<NavLinkInterface> = [
+const navsEN: Array<NavLinkInterface> = [
     {
         title: 'About',
         link: '#about',
@@ -32,4 +32,37 @@ const navs: Array<NavLinkInterface> = [
     }
 ];
 
-export default navs;
+const navsCH: Array<NavLinkInterface> = [
+    {
+        title: '关于我',
+        link: '#about',
+        isActive: false,
+    },
+    {
+        title: '工作',
+        link: '#work',
+        isActive: false,
+    },
+    {
+        title: '技能',
+        link: '#skill',
+        isActive: false,
+    },
+    {
+        title: '项目',
+        link: '#project',
+        isActive: false,
+    },
+    {
+        title: '联系',
+        link: '#contact',
+        isActive: false,
+    }
+];
+
+const navsWithLang = {
+    CH: navsCH,
+    EN: navsEN
+}
+
+export default navsWithLang;

@@ -73,10 +73,14 @@ export const ResumeButton = styled.button`
     }
 `
 
-export const SelfIntro = styled.p`
+interface SelfIntroInterface {
+    readonly lineHeight?: string
+}
+
+export const SelfIntro = styled.p<SelfIntroInterface>`
     margin-top: 1.2rem;
     max-width: 560px;
-    line-height: 1.4;
+    line-height: ${props => props.lineHeight ? props.lineHeight : 1.4};
     color: var(--main-color);
     font-size: var(--fz-lg);
     @media ${(props) => props.theme.breakpoints.sm} {

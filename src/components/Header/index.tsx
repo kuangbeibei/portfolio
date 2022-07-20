@@ -11,9 +11,10 @@ import {
 	ToggleLangulageWrap,
 	LanguageSpan
 } from "./header.styled";
-import { navs } from "Constants";
+import { navsWithLang, NavLinkInterface } from "Constants";
 import AsideMenu from "./AsideMenu";
 import { Logo as LogoComponent } from "Components";
+import { useLangContext } from "context";
 
 const Header: FC<{}> = () => {
 	const router = useRouter();
@@ -23,7 +24,13 @@ const Header: FC<{}> = () => {
 	const [isShown, setIsShown] = useState<boolean>(true);
 	const [isShowShadow, setIsShowShadow] = useState<boolean>(false);
 	const [anchor, setAnchor] = useState<string>("");
-	const [activeLang, setActiveLang] = useState('CH')
+	const [navs, setNavs] = useState<Array<NavLinkInterface>>([])
+
+	const {lang, setLang} = useLangContext();
+
+	useEffect(() => {
+		setNavs(navsWithLang[lang])
+	}, [lang])
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -51,7 +58,6 @@ const Header: FC<{}> = () => {
 	}, []);
 
 	useEffect(() => {
-		console.log("aspath", router.asPath);
 		setAnchor(router.asPath.slice(1));
 	}, [router.asPath]);
 
@@ -66,7 +72,7 @@ const Header: FC<{}> = () => {
 
 				<LinksWrap>
 					<Links>
-						{navs.map((nav) => (
+						{navs?.map((nav) => (
 							<Link href={nav.link} key={nav.link}>
 								<StyledLink active={nav.link === anchor}>
 									{nav.title}
@@ -82,7 +88,7 @@ const Header: FC<{}> = () => {
 									}, {
 										lang: 'EN',
 										tag: 'EN'
-									}].map(item => <LanguageSpan active={activeLang === item.tag} key={item.tag} onClick={() => setActiveLang(item.tag)}>{item.lang}</LanguageSpan>)
+									}].map(item => <LanguageSpan active={lang === item.tag} key={item.tag} onClick={() => setLang(item.tag as 'CH' | 'EN')}>{item.lang}</LanguageSpan>)
 								}
 							</button>
 						</ToggleLangulageWrap>

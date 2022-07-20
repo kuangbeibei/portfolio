@@ -97,7 +97,7 @@ export const ProjectItem = styled.div`
         transform: translateY(-6px);
         border-radius: 0;
         h3 {
-            background: linear-gradient(121.57deg, var(--active-color) 30%,rgba(255,255,255,0.66) 70.15%);
+            background: var(--active-color);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }

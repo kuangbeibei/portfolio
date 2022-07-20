@@ -11,21 +11,22 @@ import {
 	StyledGiTriangleTarget,
 } from "./work.styled";
 import { images } from "Constants";
-import { jobs, JobInterface, Years, JobYear } from "Constants";
+import { jobsWithLang, JobInterface, yearsWithLang, JobYear } from "Constants";
+import { useLangContext } from "context";
 
 const WorkExperience: FC<{}> = () => {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
-	const [job, setJob] = useState<JobInterface>({
-		year: "",
-		company: "",
-		jobTitle: "",
-		jobDescription: "",
-		produceImage: "",
-	});
+	const { lang } = useLangContext();
+	const [jobLang, setJobLang] = useState<JobInterface[]>([]);
+	const [job, setJob] = useState<JobInterface | undefined>();
 
 	useEffect(() => {
-		setJob(jobs[activeIndex]);
-	}, [activeIndex]);
+		setJobLang(jobsWithLang[lang]);
+	}, [lang]);
+
+	useEffect(() => {
+		setJob(jobLang[activeIndex]);
+	}, [activeIndex, jobLang]);
 
 	const handleYearChange = (index: number) => {
 		setActiveIndex(index);
@@ -33,11 +34,11 @@ const WorkExperience: FC<{}> = () => {
 
 	return (
 		<StyledWorkSection id="work">
-			<h2>Work Experience</h2>
+			<h2>{lang === "EN" ? "Work Experience" : "工作经验"}</h2>
 
 			<WorkInfoContainer>
 				<YearOfWork>
-					{Years.map((year: JobYear, index: number) => (
+					{yearsWithLang[lang].map((year: JobYear, index: number) => (
 						<YearButton
 							className={index === activeIndex ? "active" : ""}
 							key={year}
@@ -50,10 +51,10 @@ const WorkExperience: FC<{}> = () => {
 				</YearOfWork>
 
 				<JobDescription>
-					<h3>{job.jobTitle}</h3>
-					<p>{job.company}</p>
+					<h3>{job?.jobTitle}</h3>
+					<p>{job?.company}</p>
 					<ul>
-						{job.jobDescription.split(";").map((desc, index) => (
+						{job?.jobDescription.split(";").map((desc, index) => (
 							<li key={index}>
 								<StyledGiTriangleTarget />
 								<span>{desc}</span>

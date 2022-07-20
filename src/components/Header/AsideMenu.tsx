@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import Link from "next/link";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import {
@@ -10,14 +10,19 @@ import {
 	ToggleLangulageWrap,
 	LanguageSpan,
 } from "./header.styled";
-import { navs } from "Constants";
-import { MenuContextInterface, useMenuContext } from "context";
+import { navsWithLang, NavLinkInterface } from "Constants";
+import { MenuContextInterface, useLangContext, useMenuContext } from "context";
 
 const AsideMenu: FC<{
 	anchor: string;
 }> = ({ anchor }) => {
 	const { open, handleMenuSwitch } = useMenuContext() as MenuContextInterface;
-	const [activeLang, setActiveLang] = useState('CH')
+	const {lang,setLang} = useLangContext();
+	const [navs, setNavs] = useState<Array<NavLinkInterface>>([])
+
+	useEffect(() => {
+		setNavs(navsWithLang[lang])
+	}, [lang])
 
 	const handleSideMenuAnchor = () => {
         handleMenuSwitch()
@@ -56,7 +61,10 @@ const AsideMenu: FC<{
 									}, {
 										lang: 'EN',
 										tag: 'EN'
-									}].map(item => <LanguageSpan active={activeLang === item.tag} key={item.tag} onClick={() => setActiveLang(item.tag)}>{item.lang}</LanguageSpan>)
+									}].map(item => <LanguageSpan active={lang === item.tag} key={item.tag} onClick={() => {
+										setLang(item.tag as 'CH' | 'EN')
+										handleMenuSwitch()
+									}}>{item.lang}</LanguageSpan>)
 								}
 							</button>
 						</ToggleLangulageWrap>

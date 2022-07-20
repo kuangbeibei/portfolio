@@ -22,9 +22,9 @@ const Footer: FC<{}> = () => {
 					))}
 				</Socials>
 			</SocialWrapper>
-			<Copyright>Built by Kuangbeibei @2022</Copyright>
+			<Copyright>Built by Kuang Dan @2022</Copyright>
 			<div>
-				<StyledHiOutlineMail />
+				<a href="mailto:332518418@qq.com"><StyledHiOutlineMail /></a>
 			</div>
 		</StyledFooter>
 	);

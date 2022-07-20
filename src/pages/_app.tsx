@@ -1,36 +1,46 @@
-import { useState, useEffect } from "react"
-import type { AppProps } from "next/app"
-import { ThemeProvider } from "styled-components"
-import theme from "Theme/default"
-import GlobalStyle from "Styles/globals"
-import Layout from "layout"
-import { MenuContext } from "context"
+import { useState, useEffect } from "react";
+import type { AppProps } from "next/app";
+import { ThemeProvider } from "styled-components";
+import theme from "Theme/default";
+import GlobalStyle from "Styles/globals";
+import Layout from "layout";
+import { MenuContext, LangContext } from "context";
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [open, setOpen] = useState<boolean>(false);
 	const handleMenuSwitch = () => {
-        setOpen(!open);
-    }
+		setOpen(!open);
+	};
+	const [lang, setLang] = useState<"CH" | "EN">("CH");
 
 	useEffect(() => {
 		if (open) {
-			document.body.classList.add('blur')
+			document.body.classList.add("blur");
 		} else {
-			document.body.classList.remove('blur')
+			document.body.classList.remove("blur");
 		}
-	}, [open])
+	}, [open]);
 
 	return (
 		<ThemeProvider theme={theme}>
-			<MenuContext.Provider value={{
-				open,
-				handleMenuSwitch
-			}}>
-				<GlobalStyle />
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
-			</MenuContext.Provider>
+			<LangContext.Provider
+				value={{
+					lang,
+					setLang,
+				}}
+			>
+				<MenuContext.Provider
+					value={{
+						open,
+						handleMenuSwitch,
+					}}
+				>
+					<GlobalStyle />
+					<Layout>
+						<Component {...pageProps} />
+					</Layout>
+				</MenuContext.Provider>
+			</LangContext.Provider>
 		</ThemeProvider>
 	);
 }
