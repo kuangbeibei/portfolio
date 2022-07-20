@@ -7,7 +7,7 @@ export const EmailFixedWrapper = styled.div`
     transform: translateY(-50%);
     writing-mode: vertical-lr;
     text-orientation: mixed;
-    transition: all .2s ease-in-out;
+    transition: var(--transition);
     color: var(--main-color);
     &:hover {
         transform: translateY(-55%);
@@ -33,10 +33,13 @@ interface VerticalLineInterface {
 }
 
 export const VerticalLine = styled.div<VerticalLineInterface>`
-   position: fixed;
+    position: fixed;
     right: 47px;
     bottom: 0; 
     width: 1px;
     height: ${props => props.chHeight ? '150px' : '160px'};
     background-color: var(--main-color);
+    @media ${(props) => props.theme.breakpoints.sm} {
+        display: none;
+    }
 `

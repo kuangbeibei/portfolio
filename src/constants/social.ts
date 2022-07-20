@@ -10,7 +10,7 @@ const socialItems: Array<SocialInterface> = [
     {
         name: 'Github',
         icon: FiGithub,
-        url: ''
+        url: 'https://github.com/kuangbeibei'
     },
     {
         name: 'Instagram',

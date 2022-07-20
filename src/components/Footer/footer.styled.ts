@@ -16,7 +16,7 @@ export const Footer = styled.footer`
 export const SocialWrapper = styled.div`
     display: none;
     width: 100%;
-    @media ${(props) => props.theme.breakpoints.sm} {
+    @media ${(props) => props.theme.breakpoints.md} {
         display: block;
     }
 `;
