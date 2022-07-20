@@ -14,7 +14,7 @@ const Skills: FC<{}> = () => {
 
   return (
     <SkillSection id="skill">
-      <h2>Skills mostly used</h2>
+      <h2>Skills recently used</h2>
       <SelectedSkillsWrap>
         {
           skills.map((skill: string) => <StyledSkillItem key={skill}><StyledGiTriangleTarget />{skill}</StyledSkillItem>)
