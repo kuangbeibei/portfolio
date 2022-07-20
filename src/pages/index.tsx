@@ -8,7 +8,9 @@ import {
 	WorkExperience,
 	About,
 	Contact,
-	Footer
+	Footer,
+	LeftSocialBar,
+	RightEmailBar
 } from "Components";
 import {images} from "Constants"
 
@@ -27,6 +29,8 @@ const Home: NextPage = () => (
 			<Skills />
 			<Projects />
 			<Contact />
+			<LeftSocialBar />
+			<RightEmailBar />
 		</main>
 		<Footer />
 	</>
