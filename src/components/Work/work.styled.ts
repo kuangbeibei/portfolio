@@ -96,6 +96,13 @@ export const YearOfWork = styled.div`
         align-items: center;
         margin-bottom: 2rem;
     }
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
 `
 
@@ -118,6 +125,7 @@ export const YearButton = styled.button`
         border-left: none;
         font-size: var(--fz-sm);   
         border-bottom: 2px solid var(--light-color);
+        width: var(--tab-width)
     }
 
     &.active {
