@@ -47,6 +47,11 @@ const Header: FC<{}> = () => {
 				// scroll down
 				setIsShown(false);
 			}
+
+			if (currentScrollTop <= 0) {
+				setIsShown(true);
+			}
+			
 			lastScrollTop.current = currentScrollTop;
 		};
 

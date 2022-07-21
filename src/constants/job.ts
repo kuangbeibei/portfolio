@@ -44,7 +44,7 @@ const jobsEn: Array<JobInterface> = [
         produceImage: '',
     },
     {
-        year: '09/2015 - 06/2018',
+        year: '09/2015 - 06/2016',
         company: 'Zhu Baijia',
         jobTitle: 'Web Developer',
         jobDescription: 'Developed and maintained code primarily using HTML5, CSS3, JavaScript, and jQuery; Worked at an independent level, while also serving as an effective and enthusiastic collaborator; Implemented and updated application modules under the direction of Senior Software Developers',
@@ -75,7 +75,7 @@ const jobsCH: Array<JobInterface> = [
         produceImage: '',
     },
     {
-        year: '09/2015 - 06/2018',
+        year: '09/2015 - 06/2016',
         company: '住百家 - 民宿平台',
         jobTitle: '前端开发',
         jobDescription: '参与合作开发桌面端民宿详情页面中部分模块，独立开发移动端活动运营宣传网页; 使用HTML5, CSS3参与网站首页样式重构; 主要技术: HTML、CSS、JavaScript、jQuery; 公司项目前后端未分离，合作后端框架为Ruby on Rails',
