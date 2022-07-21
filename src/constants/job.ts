@@ -64,7 +64,7 @@ const jobsCH: Array<JobInterface> = [
         year: '10/2018 - 03/2022',
         company: '北京永辉超市科技有限公司 - 大型连锁超市',
         jobTitle: '高级开发',
-        jobDescription: '给公司内部多个管理系统编写健硕、易于维护的程序代码; 独立负责业务线的系统设计和技术实现; 在合作项目中提供基础设施和公共组件支持; 帮助其他研发解决开发过程中的疑难问题及排查线上bug; 主要技术: React, Redux, Typescript, Styled Components, Ant Design, Webpack, Vue等',
+        jobDescription: '给公司内部多个管理系统编写健硕、易于维护的程序代码; 独立负责业务线的系统设计和技术实现; 在合作项目中提供基础设施和公共组件支持; 帮助其他研发解决开发过程中的疑难问题及排查线上bug; 主要技术: React, Typescript, Redux, React Router, Ant Design, Axios, Styled Components, Webpack, Vue等',
         produceImage: '',
     },
     {
@@ -78,7 +78,7 @@ const jobsCH: Array<JobInterface> = [
         year: '09/2015 - 06/2018',
         company: '住百家 - 民宿平台',
         jobTitle: '前端开发',
-        jobDescription: '参与合作开发桌面端民宿详情页面中部分模块，独立开发移动端活动运营宣传网页; 使用HTML5, CSS3参与网站首页样式重构; 主要技术: HTML、CSS、JavaScript、jQuery; 前后端未分离，合作后端框架为Ruby on Rails',
+        jobDescription: '参与合作开发桌面端民宿详情页面中部分模块，独立开发移动端活动运营宣传网页; 使用HTML5, CSS3参与网站首页样式重构; 主要技术: HTML、CSS、JavaScript、jQuery; 公司项目前后端未分离，合作后端框架为Ruby on Rails',
         produceImage: '',
     },
     {

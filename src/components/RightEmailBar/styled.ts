@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const EmailFixedWrapper = styled.div`
     position: fixed;
-    right: 40px;
+    right: 2rem;
     bottom: 120px;
     transform: translateY(-50%);
     writing-mode: vertical-lr;
@@ -24,7 +24,7 @@ interface ALinkInterface {
 export const Alink = styled.a<ALinkInterface>`
     position: relative;
     text-decoration: none;
-    font-size: var(--fz-xs);
+    font-size: var(--fz-sm);
     letter-spacing: ${props => props.letterSpacing ? '3px' : '1px'};
     color: inherit;
 `
@@ -34,7 +34,7 @@ interface VerticalLineInterface {
 
 export const VerticalLine = styled.div<VerticalLineInterface>`
     position: fixed;
-    right: 47px;
+    right: 2.5rem;
     bottom: 0; 
     width: 1px;
     height: ${props => props.chHeight ? '150px' : '160px'};

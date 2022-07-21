@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { AiOutlineLoading } from "react-icons/ai";
 
 export const ContactSection = styled.section`
 
@@ -120,4 +121,19 @@ export const MessagerInfo = styled.div`
             font-size: var(--fz-sm);
         }
     } 
+`
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+
+export const AiOutlineLoadingStyled = styled(AiOutlineLoading)`
+    animation: ${rotate} 1s linear infinite;
 `

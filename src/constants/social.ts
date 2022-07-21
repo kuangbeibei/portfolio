@@ -15,22 +15,22 @@ const socialItems: Array<SocialInterface> = [
     {
         name: 'Instagram',
         icon: FiInstagram,
-        url: ''
+        url: 'https://www.instagram.com/danakuang'
     },
     {
         name: 'Twitter',
         icon: FiTwitter,
-        url: ''
+        url: 'https://twitter.com/beibei0201'
     },
-    {
-        name: 'LinkedIn',
-        icon: FiLinkedin,
-        url: ''
-    },
+    // {
+    //     name: 'LinkedIn',
+    //     icon: FiLinkedin,
+    //     url: ''
+    // },
     {
         name: 'Codepen',
         icon: FiCodepen,
-        url: ''
+        url: 'https://codepen.io/kuangbeibei'
     }
 ];
 

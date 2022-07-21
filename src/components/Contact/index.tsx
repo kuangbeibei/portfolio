@@ -1,8 +1,12 @@
 import { FC, useState } from "react";
-import { ContactSection, MessagerInfo } from "./contact.styled";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IFormInput } from "./contact";
 import { useLangContext } from "context";
+import {
+	ContactSection,
+	MessagerInfo,
+	AiOutlineLoadingStyled,
+} from "./contact.styled";
 
 const Contact: FC<{}> = () => {
 	const {
@@ -12,19 +16,22 @@ const Contact: FC<{}> = () => {
 	} = useForm<IFormInput>();
 
 	const [submitted, setSubmitted] = useState<boolean>(false);
+	const [submitting, setSubmitting] = useState<boolean>(false);
 
 	const { lang } = useLangContext();
 
 	const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+		setSubmitting(true);
 		try {
 			const result = await fetch("/api/sendMessage", {
 				method: "POST",
 				body: JSON.stringify(data),
 			});
 			setSubmitted(true);
-			console.log("result", result);
+			setSubmitting(false);
 		} catch (e) {
 			setSubmitted(false);
+			setSubmitting(false);
 			console.log("submit message error:", e);
 		}
 	};
@@ -92,7 +99,13 @@ const Contact: FC<{}> = () => {
 						</div>
 					</MessagerInfo>
 					<button type="submit">
-						{lang === "EN" ? "Send Message" : "发送"}
+						{submitting ? (
+							<AiOutlineLoadingStyled />
+						) : lang === "EN" ? (
+							"Send Message"
+						) : (
+							"发送"
+						)}
 					</button>
 				</form>
 			)}

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SocialFixedWrapper = styled.div`
     position: fixed;
-    left: 40px;
+    left: 2rem;
     bottom: 80px;
     transform: translateY(-50%);
     transition: all .2s ease-in-out;
@@ -27,8 +27,8 @@ export const Socials = styled.ul`
         a {
             color: var(--main-color);
             svg {
-                width: 15px;
-                height: 15px;
+                width: 16px;
+                height: 16px;
             }
             &:hover {
                 color: var(--active-color);
@@ -42,10 +42,10 @@ export const Socials = styled.ul`
 
 export const VerticalLine = styled.div`
     position: fixed;
-    left: 47px;
+    left: 2.6rem;
     bottom: 0; 
     width: 1px;
-    height: 150px;
+    height: 135px;
     background-color: var(--main-color);
     @media ${(props) => props.theme.breakpoints.sm} {
         display: none;
