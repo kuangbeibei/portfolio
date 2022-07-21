@@ -10,14 +10,14 @@ export interface JobInterface {
 export type JobYear = JobInterface['year']
 
 export const yearsEn: Array<JobYear> = [
-    '10/2018 - 03/2022',
+    '10/2018 - 04/2022',
     '06/2016 - 09/2018',
     '09/2015 - 06/2018',
     'before 09/2015'
 ]
 
 export const yearsCH: Array<JobYear> = [
-    '10/2018 - 03/2022',
+    '10/2018 - 04/2022',
     '06/2016 - 09/2018',
     '09/2015 - 06/2018',
     '09/2015 之前'
@@ -30,7 +30,7 @@ export const yearsWithLang = {
 
 const jobsEn: Array<JobInterface> = [
     {
-        year: '10/2018 - 03/2022',
+        year: '10/2018 - 04/2022',
         company: 'Yonghui Supermarket Corporation',
         jobTitle: 'Senior Developer',
         jobDescription: 'Wrote modern, performant, maintainable code for in-house admin dashboard projects; Worked well independently and within a team setting using different languages, frameworks, and libraries such as JavaScript, React, TypeScript, Redux, Styled Components and Ant Design; Communicated with multi-disciplinary teams of engineers, producers on a regular basis; Provided effective troubleshooting and remediation for web applications',
@@ -61,7 +61,7 @@ const jobsEn: Array<JobInterface> = [
 
 const jobsCH: Array<JobInterface> = [
     {
-        year: '10/2018 - 03/2022',
+        year: '10/2018 - 04/2022',
         company: '北京永辉超市科技有限公司 - 大型连锁超市',
         jobTitle: '高级开发',
         jobDescription: '给公司内部多个管理系统编写健硕、易于维护的程序代码; 独立负责业务线的系统设计和技术实现; 在合作项目中提供基础设施和公共组件支持; 帮助其他研发解决开发过程中的疑难问题及排查线上bug; 主要技术: React, Typescript, Redux, React Router, Ant Design, Axios, Styled Components, Webpack, Vue等',
