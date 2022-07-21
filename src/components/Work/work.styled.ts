@@ -125,7 +125,7 @@ export const YearButton = styled.button`
         border-left: none;
         font-size: var(--fz-sm);   
         border-bottom: 2px solid var(--light-color);
-        width: var(--tab-width)
+        width: var(--tab-width);
     }
 
     &.active {
