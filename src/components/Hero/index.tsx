@@ -4,7 +4,7 @@ import { HeroSection, ResumeButton, SelfIntro, Hi } from "./hero.styled";
 import BackgroundAnimation from "./BackgroundAnimation";
 import { useLangContext } from "context";
 import { FiMail } from "react-icons/fi";
-import CHResume from "Assets/CH-resume.pdf";
+import resume from "Assets/resume.pdf";
 
 const Hero: FC<{}> = () => {
 	const router = useRouter();
@@ -34,7 +34,7 @@ const Hero: FC<{}> = () => {
 						{`在我看来，程序世界里所有问题都可以被解决。相较于魔幻的现实生活充斥着诸多不合逻辑的故事，编程世界则皆有逻辑可寻，因而也可以找到相应的解决方法。这是我喜欢coding的原因之一。欢迎您给我发邮件 `}
 						<Hi href="mailto:332518418@qq.com">进一步交流~ </Hi>
 					</SelfIntro>
-					<a href={CHResume}>
+					<a href={resume}>
 						<ResumeButton>查看我的简历</ResumeButton>
 					</a>
 				</>
