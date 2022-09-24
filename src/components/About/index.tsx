@@ -53,8 +53,8 @@ const About: FC<{}> = () => {
 					})} */}
 					{
 						lang === 'EN' ? <>
-							<p>Hello!👋 I'm Dana Kuang, my interest in web development started back in 2014 when I was an international news editor at Netease, a nasdaq listed company based in China. Back then, I worked with web designers to make featured news pages - turns out teaching me a lot about HTML &amp; CSS and changed my career.</p>
-							<p>To this day, I've had<span> 7 years' experience</span> as a web developer building <span>to B and to C projects</span> both on <span>desktop and mobile</span> for a variety of users. The main focus on my recent job was building accessible, inclusive admin dashboards for internal employees using React, Redux, Typescript, etc.</p>
+							<p>Hello!👋 I'm Dana Kuang, my interest in web development back in 2014 when I was an international news editor at Netease, a nasdaq listed company based in China. Back then, I worked with web designers to make featured news pages - turns out teaching me a lot about HTML &amp; CSS and changed my career.</p>
+							<p>To this day, I've had<span> 7 years' experience</span> as a frontend developer building <span>to B and to C projects</span> both on <span>desktop and mobile</span> for a variety of users. The main focus on my recent job was building accessible, inclusive admin dashboards for internal employees using React, Redux, Typescript, Node.js, etc.</p>
 							<p>Currently, I am learning and building things about <span>blockchain & web3</span>, trying to integrate my previous knowledge into new things. With my passion, I want to give myself a break to dive into this new area embracing uncertainty and possibility.</p>
 						</> : <>
 							<p style={{lineHeight: 1.6}}>
