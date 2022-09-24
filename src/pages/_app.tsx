@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	const handleMenuSwitch = () => {
 		setOpen(!open);
 	};
-	const [lang, setLang] = useState<"CH" | "EN">("CH");
+	const [lang, setLang] = useState<"CH" | "EN">("EN");
 
 	useEffect(() => {
 		if (open) {

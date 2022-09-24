@@ -6,7 +6,7 @@ export interface LangContextInterface {
 }
 
 const LangContext = createContext<LangContextInterface>({
-    lang: 'CH',
+    lang: 'EN',
     setLang: () => {}
 });
 
